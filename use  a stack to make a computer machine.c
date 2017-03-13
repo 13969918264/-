@@ -108,7 +108,7 @@ int getop(char s[])
 #define BUFSIZE	100
 
 char buf[BUFSIZE];			用于ungetch函数的缓冲区
-int buf = 0;			buf中下一个空闲位置
+int bufp = 0;			buf中下一个空闲位置
 
 int getch(void)			取下一个字符（可能是压回的字符）
 {
@@ -120,6 +120,6 @@ void ungetch(int c)			把字符压回到输入中
 	if (bufp >= BUFSIZE)
 		printf("ungetch: too many characters\n");
 	else
-		buf[buf++] = c;
+		buf[bufp++] = c;
 }
 */
